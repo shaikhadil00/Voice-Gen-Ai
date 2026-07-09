@@ -159,16 +159,28 @@ def detect_intent(text):
 def execute_action(intent):
 
     if intent == "open_youtube":
-        st.markdown('<div class="custom-box">Opening YouTube...</div>', unsafe_allow_html=True)
-        webbrowser.open("https://youtube.com")
+        st.markdown(
+            '<div class="custom-box">▶️ Click the button below to open YouTube.</div>',
+            unsafe_allow_html=True
+        )
+        st.link_button("▶️ Open YouTube", "https://youtube.com")
 
     elif intent == "open_google":
-        st.markdown('<div class="custom-box">Opening Google...</div>', unsafe_allow_html=True)
-        webbrowser.open("https://google.com")
+        st.markdown(
+            '<div class="custom-box">🌐 Click the button below to open Google.</div>',
+            unsafe_allow_html=True
+        )
+        st.link_button("🌐 Open Google", "https://google.com")
 
     elif intent == "open_movie_app":
-        st.markdown('<div class="custom-box">🎬 Opening Movie Recommender...</div>', unsafe_allow_html=True)
-        webbrowser.open("https://movie-recommendation-system-r5kpzip4ebajza7qemsryp.streamlit.app/")
+        st.markdown(
+            '<div class="custom-box">🎬 Click the button below to open the Movie Recommender.</div>',
+            unsafe_allow_html=True
+        )
+        st.link_button(
+            "🎬 Open Movie Recommender",
+            "https://movie-recommendation-system-r5kpzip4ebajza7qemsryp.streamlit.app/"
+        )
 
     elif intent == "check_balance":
         st.markdown(
@@ -178,7 +190,7 @@ def execute_action(intent):
 
     elif intent == "transfer_money":
         amount = 5000
-        user_account["balance"] -= amount 
+        user_account["balance"] -= amount
         transactions.insert(0, f"Transferred ₹{amount} to Account B")
 
         st.markdown(
@@ -187,25 +199,42 @@ def execute_action(intent):
         )
 
     elif intent == "transaction_history":
-        st.markdown('<div class="custom-box">📜 Last Transactions:</div>', unsafe_allow_html=True)
+        st.markdown(
+            '<div class="custom-box">📜 Last Transactions:</div>',
+            unsafe_allow_html=True
+        )
 
         for t in transactions:
-            st.markdown(f'<div class="custom-box">➡ {t}</div>', unsafe_allow_html=True)
+            st.markdown(
+                f'<div class="custom-box">➡ {t}</div>',
+                unsafe_allow_html=True
+            )
 
     elif intent == "tell_time":
         now = datetime.datetime.now().strftime("%H:%M:%S")
-        st.markdown(f'<div class="custom-box">Current Time: {now}</div>', unsafe_allow_html=True)
+        st.markdown(
+            f'<div class="custom-box">Current Time: {now}</div>',
+            unsafe_allow_html=True
+        )
 
     elif intent == "tell_date":
         today = datetime.datetime.now().strftime("%d %B %Y")
-        st.markdown(f'<div class="custom-box">Today\'s Date: {today}</div>', unsafe_allow_html=True)
+        st.markdown(
+            f'<div class="custom-box">Today\'s Date: {today}</div>',
+            unsafe_allow_html=True
+        )
 
     elif intent == "greeting":
-        st.markdown('<div class="custom-box">Hello! How can I help you?</div>', unsafe_allow_html=True)
+        st.markdown(
+            '<div class="custom-box">Hello! How can I help you?</div>',
+            unsafe_allow_html=True
+        )
 
     else:
-        st.markdown('<div class="custom-box">Command not recognized.</div>', unsafe_allow_html=True)
-
+        st.markdown(
+            '<div class="custom-box">Command not recognized.</div>',
+            unsafe_allow_html=True
+        )
 # -------------------------
 # PROCESS AUDIO
 # -------------------------
