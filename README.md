@@ -12,7 +12,7 @@ Open Google
 
 Open YouTube
 
-I want to watch a movie
+I want to watch a movie (select a movie it recommend accordingly)
 
 Check my balance
 
